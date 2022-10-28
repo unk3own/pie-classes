@@ -1,0 +1,91 @@
+{% extends './common.html' %}
+{% load static %}
+{% block title %}contact pie classes pulwama{% endblock title %}
+
+
+{% block css %}
+<style>
+    .navContactLink {
+        display: none;
+    }
+    .navHomeLink {
+        display: inherit;
+    }
+
+</style>
+
+<style>
+
+.cells, .links, .address {
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.214);
+}
+
+.cell-title, .links-title, .address-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    padding-top: 10px;
+}
+.cell, .yt-div, .fb-div, .add-div {
+    padding: 2px 20px;
+}
+
+
+.fb-icon, .yt-icon, .loc-ico {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 30px;
+}
+.yt-div, .fb-div, .add-div {
+    display: flex;
+    align-items: center;
+}
+
+
+
+</style>
+
+{% endblock css %}
+
+
+
+{% block body %}
+{% include './navbar.html' %}
+
+<div class="contact">
+
+    <div class="cells">
+        <div class="cell-title">Ring us at</div>
+            <div class="cell"><a href="tel:+917006712971">7006712971</a></div>
+            <div class="cell"><a href="tel:+917780820018">7780820018</a></div>
+    </div>
+
+    <div class="links">
+        <div class="links-title">Social Media</div>
+        
+            <div class="yt-div">
+                <img class="yt-icon" src="{% static 'yt-logo.png' %}" alt="yt"/>
+                <div class="yt-link">pieclassespulwama</div>
+            </div>
+            <div class="fb-div">
+                <img class="fb-icon" src="{% static 'fb-logo.png' %}" alt="fb"/>
+                <div class="fb-link">pieclassespulwama</div>
+            </div>
+    </div>
+    <div class="address">
+        <div class="address-title">Address</div>
+        <div class="add-div">
+            <img class="loc-ico" src="{% static 'loc-ico.png' %}">
+            <div class="inner-address">
+                Dangerpora Pulwama<br>
+                Near Astan Masjid, Glass Complex
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

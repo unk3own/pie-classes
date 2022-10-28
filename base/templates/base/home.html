@@ -1,0 +1,320 @@
+{% extends './common.html' %}
+{% load static %}
+
+{% block title %}pie classes pulwama official site | pie classes{% endblock title %}
+
+
+{% block css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Kolker+Brush&display=swap" rel="stylesheet">
+
+
+<style>
+
+.navHomeLink {
+    display: none;
+}
+.navContactLink {
+    display: inherit;
+}
+
+
+
+
+.first-page {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.bg-pic-fp {
+    height: 97vh;
+    width: 100%;
+    /* object-fit: cover; */
+    background-image: url({% static 'books.jpg' %});
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(174, 163, 163);;
+}
+
+.title-fp {
+    position: absolute;
+    top: 30px;
+    font-family: 'Fasthand', cursive;
+    left: 30px;
+}
+.title-fp .title1 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.about-title {
+    font-size: 1.3rem;
+    color: rgb(129, 3, 3);
+}
+.title-fp .title2 {
+    font-size: 2rem;
+    padding-left: 10px;
+}
+.sub-fp {
+    position: absolute;
+    bottom: 10px;
+    font-size: 3rem;
+    text-align: center;
+    
+    width: 85%;
+    font-family: 'Kolker Brush', cursive;
+}
+
+
+.courses-heading {
+    font-size: 1.2rem;
+    background-color: rgb(0, 133, 205);
+    padding: 5px 10px;
+}
+.course-names {
+    padding: 30px 0;
+}
+.course1 {
+    position: relative;
+    left: -30px;
+}
+.courses {
+    background-color: rgb(0, 153, 255);
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+
+.faculty {
+    background-color: rgba(0, 128, 0, 0.519);
+}
+.faculty-title {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: rgba(0, 128, 0, 0.751);
+}
+.onefac {
+    width: 100%;
+    display: flex;
+}
+.oneface {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.imageE {
+    text-align: right;
+}
+.facpic {
+    width: 120px;
+    aspect-ratio: 1/0.7;
+    object-fit: cover;
+}
+.facdesc {
+    padding: 10px 0 0 10px;
+}
+.factitle {
+    font-size: 1.2rem;
+}
+
+
+#tchrToggleBtn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+footer {
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.479);
+    padding: 10px;
+}
+footer .faculty-link {
+    color: blue;
+    text-decoration: underline;
+}
+footer a {
+    color: blue;
+}
+
+footer .ftr-title {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+footer * {
+    padding: 2px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock css %}
+
+{% block body %}
+
+<div class="first-page">
+
+    <!-- <img class="bg-pic-fp" src="{% static 'books.jpg' %}"/> -->
+    <div class="bg-pic-fp"></div>
+    <div class="title-fp">
+        <span class="title1">PIE</span>
+        <span class="title2">classes</span>
+        <div class="about-title">
+            Premier institute of coaching
+        </div>
+    </div>
+    
+    <div class="sub-fp">
+        We care for your future
+    </div>
+</div>
+
+
+<!-- NAV BAR IS HERE -->
+{% include './navbar.html' %}
+
+
+
+<div class="courses" id="courses">
+    <div class="courses-heading">
+        Packages we offer:
+    </div>
+    <div class="courses-inner">
+
+        <ul>
+        <div class="course1">Class 11<sup>th</sup></div>
+        <div class="course1-det">
+            <li class="course12">One year package</li>
+            <li class="course12">Full 2 &frac12; year package including NEET or JEE</li>
+        </div>
+        </ul>
+
+        <ul>
+        <div class="course1">Class 12<sup>th</sup></div>
+        <div class="course1-det">
+            <li class="course12">One year package</li>
+            <li class="course12">Full 1 &frac12; year package including NEET or JEE</li>
+        </div>
+        </ul>
+
+        <ul>
+        <div class="course1">NEET</div>
+        <div class="course1-det">
+            <li class="course12">Six months full course</li>
+            <li class="course12">Full 1 year course (repeaters or droppers)</li>
+        </div>
+        </ul>
+    </div>
+</div>
+
+<div class="faculty">
+
+    <div class="faculty-title">Faculty members</div>
+
+
+    <div class="onefac">
+        <img src="{% static 'default.jpg' %}" class="facpic"></img>
+        <div class="facdesc">
+            <div class="factitle">Mr Sajad Sir</div>
+            <div class="desc">Leading Botany Expert</div>
+        </div>
+    </div>
+
+    <div class="oneface">
+        <div class="facdesc">
+            <div class="factitle">Mr Sajad Sir</div>
+            <div class="desc">Leading Botany Expert</div>
+        </div>
+        <img src="{% static 'default.jpg' %}" class="facpic"/>
+    </div>
+
+    <div id="otherfac">
+
+        <div class="onefac">
+            <img src="{% static 'default.jpg' %}" class="facpic"></img>
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+        </div>
+
+        <div class="oneface">
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+            <img src="{% static 'default.jpg' %}" class="facpic"/>
+        </div>
+
+        <div class="onefac">
+            <img src="{% static 'default.jpg' %}" class="facpic"></img>
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+        </div>
+
+        <div class="oneface">
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+            <img src="{% static 'default.jpg' %}" class="facpic"/>
+        </div>
+
+        <div class="onefac">
+            <img src="{% static 'default.jpg' %}" class="facpic"></img>
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+        </div>
+
+        <div class="oneface">
+            <div class="facdesc">
+                <div class="factitle">Mr Sajad Sir</div>
+                <div class="desc">Leading Botany Expert</div>
+            </div>
+            <img src="{% static 'default.jpg' %}" class="facpic"/>
+        </div>
+
+
+    </div> <!--other fac ends here-->
+
+    <button id="tchrToggleBtn">Show All</button>
+
+</div>
+
+<footer class="footer">
+    <div class="ftr-title">
+        PIE classes
+    </div><br>
+    <div>
+        <a class="contact-link" href="{% url 'contact' %}">Contact us</a>
+    </div>
+    <div>
+        <a class="courses-link" href="#courses">Packages we offer</a>
+    </div>
+    <div>
+        <a class="faculty-link" id="faculty-link" >Faculty</a>
+    </div>
+</footer>
+
+
+
+<script>
+
+    $("#otherfac").hide();
+    $("#tchrToggleBtn").on("click", function() {
+        $("#otherfac").show();
+        $("#tchrToggleBtn").hide();
+    });
+    $("#faculty-link").on("click", function() {
+        $("#otherfac").show();
+        $("#tchrToggleBtn").hide();
+    });
+
+</script>
+
+
+{% endblock body %}

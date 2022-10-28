@@ -1,0 +1,41 @@
+
+
+<style>
+    .nav-bar {
+        padding: 10px 0;
+        background-color: rgb(0, 0, 80);
+        position: sticky;
+        top: 5px;
+        color: white;
+        left: 0;
+        right: 0;
+    }
+    
+    .inner-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    .title-nav {
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+    .pie-nav {
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+    .contactBtn {
+        padding: 5px 10px;
+        margin-right: 10px;
+        background-color: rgb(226, 38, 38);
+        border: 0;
+        border-radius: 5px;
+    }
+</style>
+
+<nav class="nav-bar">
+    <div class="inner-nav">
+        <div class="title-nav"><span class="pie-nav">π</span> classes</div>
+        <a href="{% url 'contact' %}" class="navContactLink" ><button class="contactBtn">Contact us</button></a>
+        <a href="{% url 'home' %}" class="navHomeLink" ><button class="contactBtn">Home</button></a>
+    </div>
+</nav>
