@@ -19,9 +19,17 @@
     display: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+</style>
 
 
 
+<style>
+body {
+    overflow-x: hidden;
+}
 .first-page {
     width: 100%;
     margin-bottom: 20px;
@@ -56,98 +64,120 @@
 }
 .sub-fp {
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
     font-size: 3rem;
     text-align: center;
     
-    width: 85%;
+    width: 95.5%;
+    background-color: rgba(0, 0, 0, 0.411);
     font-family: 'Kolker Brush', cursive;
 }
-
-
-.courses-heading {
-    font-size: 1.2rem;
-    background-color: rgb(0, 133, 205);
-    padding: 5px 10px;
-}
-.course-names {
-    padding: 30px 0;
-}
-.course1 {
-    position: relative;
-    left: -30px;
-}
-.courses {
-    background-color: rgb(0, 153, 255);
-    padding-bottom: 10px;
-    margin-top: 20px;
+.subtitle-span {
+    color: red;
 }
 
-
-.faculty {
-    background-color: rgba(0, 128, 0, 0.519);
-}
-.faculty-title {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    padding: 5px 10px;
-    background-color: rgba(0, 128, 0, 0.751);
-}
-.onefac {
-    width: 100%;
-    display: flex;
-}
-.oneface {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(2, 80, 2, 0.519);
-}
-.imageE {
-    text-align: right;
-}
-.facpic {
-    width: 120px;
-    aspect-ratio: 1/0.7;
-    object-fit: cover;
-}
-.facdesc {
-    padding: 10px 0 0 10px;
-}
-.factitle {
-    font-size: 1.2rem;
-}
-
-
-#tchrToggleBtn {
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-}
-
-
-footer {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.479);
-    padding: 10px;
-}
-footer .faculty-link {
-    color: blue;
-    text-decoration: underline;
-}
-footer a {
-    color: blue;
-}
-
-footer .ftr-title {
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-footer * {
-    padding: 2px;
-}
 </style>
+
+
+<!-- faculty -->
+<style>
+    .div-for-faculty, .div-for-courses {
+        padding: 10px;
+        padding-bottom: 0;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    .faculty-description {
+        display: flex;
+        align-items: center;
+    }
+    .faculty-h-description {
+        padding-bottom: 10px;
+    }
+    .faculty-h-description, .courses-h-description {
+        color: rgb(68, 0, 0);
+    }
+    .even {
+        justify-content: end;
+    }
+
+    .faculty-image {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        width: 70px;
+        border-radius: 50%;
+    }
+    .faculty-name {
+        font-weight: bold;
+        padding-left: 10px;
+    }
+    .faculty-field {
+        padding-left: 15px;
+    }
+    .even .faculty-name, .faculty-field {
+        text-align: right;
+        padding-right: 5px;
+    }
+    .even .faculty-field {
+        padding-right: 10px;
+    }
+
+    .more-faculty {
+        width: calc(100% + 20px);
+        transform: translateX(-10px);
+        border: 0;
+        padding: 5px 0;
+        border-radius: 0 0 10px 10px;
+        margin-top: 10px;
+        background-color: rgb(0, 195, 195);
+    }
+</style>
+
+
+<!-- courses -->
+<style>
+    .single-package-heading {
+        padding-top: 10px;
+        transform: translateX(-20px);
+        font-weight: bold;
+    }
+    .package-list {
+        transform: translateY(-10px);
+    }
+</style>
+
+
+<style>
+    footer {
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.479);
+        padding: 10px;
+        padding-top: 0;
+    }
+    footer .faculty-link {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    footer a {
+        color: blue;
+    }
+    
+    footer .ftr-title {
+        font-size: 1.3rem;
+        text-align: center;
+        font-weight: bold;
+        transform: translateY(10px);
+    }
+    footer * {
+        padding: 2px;
+    }
+</style>
+    
+    
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock css %}
 
@@ -166,7 +196,8 @@ footer * {
     </div>
     
     <div class="sub-fp">
-        We care for your future
+        We are here to revolutionise the world of studying because<br>
+        <span class="subtitle-span">We care for your future</span>
     </div>
 </div>
 
@@ -175,134 +206,124 @@ footer * {
 {% include './navbar.html' %}
 
 
-
-<div class="courses" id="courses">
-    <div class="courses-heading">
-        Packages we offer:
+<div class="div-for-courses" id="packages">
+    <div class="courses-h-description">
+        Here at PIE classes we offer some of the best opportunities for the students 
+        aiming to crack NEET, IIT or JEE entrance exams.<br>
+        Some of the packages we offer are...
     </div>
-    <div class="courses-inner">
+    <ul class="package-list">
+        <div class="single-package-heading">Class 11<sup>th</sup></div>
+            <li>Full 2&frac12; year course including NEET or JEE.</li>        
+            <li>Only 1 year course.</li>
+        
+        <div class="single-package-heading">Class 12<sup>th</sup></div>
+            <li>Full 1&frac12; year course including NEET or JEE.</li>        
+            <li>Only 1 year course.</li>
 
-        <ul>
-        <div class="course1">Class 11<sup>th</sup></div>
-        <div class="course1-det">
-            <li class="course12">One year package</li>
-            <li class="course12">Full 2 &frac12; year package including NEET or JEE</li>
-        </div>
-        </ul>
+        <div class="single-package-heading">NEET or JEE</div>
+            <li>Half year course.</li>        
+            <li>Full year course (dropees or repeaters).</li>
+    </ul>
+</div>
 
-        <ul>
-        <div class="course1">Class 12<sup>th</sup></div>
-        <div class="course1-det">
-            <li class="course12">One year package</li>
-            <li class="course12">Full 1 &frac12; year package including NEET or JEE</li>
-        </div>
-        </ul>
 
-        <ul>
-        <div class="course1">NEET</div>
-        <div class="course1-det">
-            <li class="course12">Six months full course</li>
-            <li class="course12">Full 1 year course (repeaters or droppers)</li>
+
+<div class="div-for-faculty">
+    <div class="faculty-h-description">PIE classes offers one of the best combination 
+        of faculty members, at one place.
+    </div>
+
+
+    <div class="faculty-description">
+        <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+        <div>
+            <div class="faculty-name">Mr. Sajad Sir</div>
+            <div class="faculty-field">Leading Botany Expert</div>
         </div>
-        </ul>
+    </div>
+
+    <div class="faculty-description even">
+        <div>
+            <div class="faculty-name">Mr. Manzoor Sir</div>
+            <div class="faculty-field">Leading Chemistry Expert</div>
+        </div>
+        <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+    </div>
+
+    <div class="other-faculty" id="other-faculty">
+        <div class="faculty-description">
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+            <div>
+                <div class="faculty-name">Mr. Gr. Sir</div>
+                <div class="faculty-field">Leading Maths Expert</div>
+            </div>
+        </div>
+
+        <div class="faculty-description even">
+            <div>
+                <div class="faculty-name">Mr. Waseel Ashraf</div>
+                <div class="faculty-field">Leading Zology Expert</div>
+            </div>
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+        </div>
+
+        <div class="faculty-description">
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+            <div>
+                <div class="faculty-name">Dr. RAfi Andrabi</div>
+                <div class="faculty-field">Leading Physics Expert</div>
+            </div>
+        </div>
+
+        <div class="faculty-description even">
+            <div>
+                <div class="faculty-name">Er. Yasir Khandey</div>
+                <div class="faculty-field">Leading Physics Expert</div>
+            </div>
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+        </div>
+
+        <div class="faculty-description">
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+            <div>
+                <div class="faculty-name">Er. Sheikh Faisal</div>
+                <div class="faculty-field">Leading Physics Expert</div>
+            </div>
+        </div>
+
+        <div class="faculty-description even">
+            <div>
+                <div class="faculty-name">Mr. Raies Sir</div>
+                <div class="faculty-field">Leading Chemistry Expert</div>
+            </div>
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+        </div>
+
+        <div class="faculty-description">
+            <img class="faculty-image" src="{% static 'default.jpg' %}"/>
+            <div>
+                <div class="faculty-name">Mr. Mudasir Sir</div>
+                <div class="faculty-field">Leading Chemistry Expert</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="more-faculty-div">
+        <button id="more-faculty" class="more-faculty">All faculty members</button>
     </div>
 </div>
 
-<div class="faculty">
-
-    <div class="faculty-title">Faculty members</div>
-
-
-    <div class="onefac">
-        <img src="{% static 'default.jpg' %}" class="facpic"></img>
-        <div class="facdesc">
-            <div class="factitle">Mr Sajad Sir</div>
-            <div class="desc">Leading Botany Expert</div>
-        </div>
-    </div>
-
-    <div class="oneface">
-        <div class="facdesc">
-            <div class="factitle">Mr Manzoor Sir</div>
-            <div class="desc">Leading Chemistry Expert</div>
-        </div>
-        <img src="{% static 'default.jpg' %}" class="facpic"/>
-    </div>
-
-    <div id="otherfac">
-
-        <div class="onefac">
-            <img src="{% static 'default.jpg' %}" class="facpic"></img>
-            <div class="facdesc">
-                <div class="factitle">Mr Waseel Ashraf</div>
-                <div class="desc">Leading Zology Expert</div>
-            </div>
-        </div>
-
-        <div class="oneface">
-            <div class="facdesc">
-                <div class="factitle">Dr Rafi Andrabi</div>
-                <div class="desc">Leading Physics Expert</div>
-            </div>
-            <img src="{% static 'default.jpg' %}" class="facpic"/>
-        </div>
-
-        <div class="onefac">
-            <img src="{% static 'default.jpg' %}" class="facpic"></img>
-            <div class="facdesc">
-                <div class="factitle">Er. Yasir Khandey</div>
-                <div class="desc">Leading Physics Expert</div>
-            </div>
-        </div>
-
-        <div class="oneface">
-            <div class="facdesc">
-                <div class="factitle">Mr Gh. Rasool Sir</div>
-                <div class="desc">Leading Maths Expert</div>
-            </div>
-            <img src="{% static 'default.jpg' %}" class="facpic"/>
-        </div>
-
-        <div class="onefac">
-            <img src="{% static 'default.jpg' %}" class="facpic"></img>
-            <div class="facdesc">
-                <div class="factitle">Er. Sheikh Faisal</div>
-                <div class="desc">Leading Physics Expert</div>
-            </div>
-        </div>
-
-        <div class="oneface">
-            <div class="facdesc">
-                <div class="factitle">Mr Raies Sir</div>
-                <div class="desc">Leading Chemistry Expert</div>
-            </div>
-            <img src="{% static 'default.jpg' %}" class="facpic"/>
-        </div>
-
-        <div class="onefac">
-            <img src="{% static 'default.jpg' %}" class="facpic"></img>
-            <div class="facdesc">
-                <div class="factitle">Mr Mudasir Sir</div>
-                <div class="desc">Leading Chemistry Expert</div>
-            </div>
-        </div>
-
-
-    </div> <!--other fac ends here-->
-
-    <button id="tchrToggleBtn">Show All</button>
-
-</div>
 
 <footer class="footer">
     <div class="ftr-title">
-        PIE classes
+        PIE classes pulwama
     </div><br>
     <div>
         <a class="contact-link" href="{% url 'contact' %}">Contact us</a>
     </div>
     <div>
-        <a class="courses-link" href="#courses">Packages we offer</a>
+        <a class="courses-link" href="#packages">Packages we offer</a>
     </div>
     <div>
         <a class="faculty-link" id="faculty-link" >Faculty</a>
@@ -310,19 +331,16 @@ footer * {
 </footer>
 
 
-
 <script>
 
-    $("#otherfac").hide();
-    $("#tchrToggleBtn").on("click", function() {
-        $("#otherfac").show();
-        $("#tchrToggleBtn").hide();
-    });
-    $("#faculty-link").on("click", function() {
-        $("#otherfac").show();
-        $("#tchrToggleBtn").hide();
+    $("#other-faculty").hide();
+    $("#more-faculty").on("click", function() {
+        $("#other-faculty").toggle();
     });
 
+    $("#faculty-link").on("click", function() {
+        $("#other-faculty").toggle();
+    });
 </script>
 
 
